@@ -71,7 +71,9 @@ export async function bootstrap(options: BootstrapOptions) {
 
   app.useLogger(WinstonModule.createLogger(winstonLoggerOptions))
 
-  app.enableCors()
+  if (process.env.NODE_ENV === 'dev') {
+    app.enableCors()
+  }
 
   await app.listen({
     port: options.port,
