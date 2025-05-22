@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=dev nest build core",
-    "dev": "cross-env NODE_ENV=dev nest start bilibilisleep",
+    "dev": "cross-env NODE_ENV=dev nest start bilibilisleep --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "db:gen": "prisma generate",
