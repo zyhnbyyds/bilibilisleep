@@ -9,7 +9,7 @@ bootstrap({
   allExceptionsFilter: true,
   logger: true,
   globalValidate: true,
-  prefix: '/v2/app',
+  prefix: '/bilibilisleep',
   fastifyCsrf: true,
   secureSession: {
     cookie: {

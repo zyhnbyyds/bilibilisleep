@@ -38,3 +38,9 @@ export interface WxConfig {
   token: string
   templateId: string
 }
+
+export interface BilibiliConfig {
+  app_id: number
+  app_key: string
+  app_secret: string
+}

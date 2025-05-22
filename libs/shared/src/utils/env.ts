@@ -1,4 +1,4 @@
-import { plainToInstance } from 'class-transformer'
+import { plainToInstance, Transform } from 'class-transformer'
 import { IsEnum, IsNumber, IsString, Max, Min, validateSync } from 'class-validator'
 
 export function isDevMode(): boolean {
@@ -58,6 +58,16 @@ class EnvironmentVariables {
 
   @IsString()
   DB_DATABASE: string
+
+  @IsString()
+  BILIBILI_APP_KEY: string
+
+  @IsString()
+  BILIBILI_APP_SECRET: string
+
+  @IsNumber()
+  @Transform(({ value }) => Number(value))
+  BILIBILI_APP_ID: number
 }
 
 export function customValidateEnv(config: Record<string, unknown>) {

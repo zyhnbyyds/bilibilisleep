@@ -16,7 +16,8 @@ describe('appController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.GameStart()).toBe('Hello World!')
+      const body = { appKey: 'appKey', appSecret: 'appSecret', app_id: 1, code: 'code' }
+      expect(appController.GameStart(body)).toBe('Hello World!')
     })
   })
 })

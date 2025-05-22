@@ -1,6 +1,7 @@
 import { Global, Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { databaseConfig, jwtConfig, redisConfig } from './config'
+import bilibili from './config/bilibili'
 import RedisFactory from './factories/redis.factory'
 import { PrismaService } from './services/prisma.service'
 import { customValidateEnv } from './utils/env'
@@ -14,7 +15,7 @@ import { customValidateEnv } from './utils/env'
     ConfigModule.forRoot({
       isGlobal: true,
       validate: customValidateEnv,
-      load: [redisConfig, databaseConfig, jwtConfig],
+      load: [redisConfig, databaseConfig, jwtConfig, bilibili],
       envFilePath: ['.env', `.env.${process.env.NODE_ENV}`],
     }),
     // TODO: fix 修复在微服务调用情况下的rate limit报错
