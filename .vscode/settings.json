@@ -3,5 +3,8 @@
     "accesskeyid",
     "bili",
     "metatype"
+  ],
+  "unocss.root": [
+    "web"
   ]
 }
