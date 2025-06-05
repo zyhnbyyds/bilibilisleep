@@ -7,4 +7,6 @@ export default antfu({
     'test/no-import-node-test': 'off',
     'jsdoc/require-returns-description': 'off',
   },
+
+  ignores: ['web'],
 })

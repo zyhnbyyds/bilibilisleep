@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "esnext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@libs/*": ["libs/*"],
+      "@type/*": ["types/*"]
     },
     "resolveJsonModule": true,
     "types": [
@@ -17,9 +19,10 @@
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "exclude": ["dist", "node_modules", "eslint.config.mjs"]
+  "exclude": ["dist", "node_modules", "eslint.config.mjs", "public/js/**/*"]
 }

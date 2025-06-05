@@ -17,7 +17,7 @@ const ipt = defineModel<string>({ default: '' })
       {{ prefix }}
     </label>
     <input v-model="ipt" :placeholder="placeholder" text-3.5 flex-1 p-2.5 pr-28px text-dark-1 h-33px outline-none type="text">
-    <img src="../../public/close.png" alt="close" cursor-pointer h-2.5 w-2.5 absolute right-2 class="top-50% -translate-y-50%" @click="ipt = ''">
+    <img src="/close.png" alt="close" cursor-pointer h-2.5 w-2.5 absolute right-2 class="top-50% -translate-y-50%" @click="ipt = ''">
   </div>
 </template>
 
