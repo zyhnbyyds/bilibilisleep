@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'nestjs-app',
-      script: '/usr/apps/bilibilisleep/app/apps/bilibilisleep/main.js',
+      script: '/usr/apps/bilibilisleep/app/dist/apps/bilibilisleep/main.js',
       exec_mode: 'cluster',
       instances: 3,
       watch: false,
