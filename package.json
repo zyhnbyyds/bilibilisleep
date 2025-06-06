@@ -7,7 +7,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=dev nest build core",
+    "build": "cross-env NODE_ENV=prod nest build core",
     "dev": "cross-env NODE_ENV=dev nest start bilibilisleep --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

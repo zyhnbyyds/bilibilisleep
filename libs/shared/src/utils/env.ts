@@ -41,24 +41,6 @@ class EnvironmentVariables {
   @IsString()
   JWT_REFRESH_SECRET: string
 
-  // Database
-  @IsNumber()
-  @Min(0)
-  @Max(65535)
-  DB_PORT: number = 5432
-
-  @IsString()
-  DB_HOST: string = '127.0.0.1'
-
-  @IsString()
-  DB_USERNAME: string
-
-  @IsString()
-  DB_PASSWORD: string
-
-  @IsString()
-  DB_DATABASE: string
-
   @IsString()
   BILIBILI_APP_KEY: string
 
