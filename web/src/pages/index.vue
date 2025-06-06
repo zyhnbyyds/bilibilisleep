@@ -1,10 +1,12 @@
 <script lang='ts' setup>
 import { doEnd, doStart } from '@libs/apis'
-import { createSocket, destroySocket, sleepPeopleMap, timer } from '@libs/socket'
+import { comments, createSocket, destroySocket, sleepPeopleMap, timer } from '@libs/socket'
+import { sleepBgList } from '~/constants/sleep-bg'
 
 const visible = ref(false)
 const code = ref(localStorage.getItem('code') || '')
 const gameId = ref('')
+const { next, index } = useCycleList(sleepBgList, { initialValue: 'room1' })
 
 if (!code.value) {
   visible.value = true
@@ -25,6 +27,9 @@ async function handleOpen(zbCode: string) {
   createSocket({
     game_id,
     ...websocket_info,
+    onChangeBg() {
+      next()
+    },
   })
 }
 
@@ -41,8 +46,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div text-dark dark:text-white class="page h-full w-full">
+  <div text-dark dark:text-white overflow-hidden :style="{ backgroundImage: `url('/sleep-bgs/${sleepBgList[index]}.png')` }" class="page h-full w-full">
     <BiliModal v-model="visible" @start="handleOpen" />
+
+    <Comments :comments="comments" />
 
     <div v-if="!visible">
       <TransitionGroup name="fade">
@@ -56,7 +63,6 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .page {
-  background-image: url('/sleep.png');
   background-size: cover;
   background-repeat: no-repeat;
 }

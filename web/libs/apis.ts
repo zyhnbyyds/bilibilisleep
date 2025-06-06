@@ -2,7 +2,6 @@ import type { CommonRes, GameStartRes } from '@type/bilibili'
 import { createFetch } from '@vueuse/core'
 
 const request = createFetch({
-  baseUrl: 'http://localhost:4100/bilibilisleep',
   options: {
     timeout: 5000,
     afterFetch({ data, response }) {
@@ -25,13 +24,13 @@ const request = createFetch({
 })
 
 export function doStart(code: string) {
-  return request('/start').post({ code }).json<GameStartRes>()
+  return request('/bilibilisleep/start').post({ code }).json<GameStartRes>()
 }
 
 export function doEnd(game_id: string) {
-  return request('/end').post({ game_id }).json()
+  return request('/bilibilisleep/end').post({ game_id }).json()
 }
 
 export function doHeart(game_id: string) {
-  return request('/heartbeat').post({ game_id }).json()
+  return request('/bilibilisleep/heartbeat').post({ game_id }).json()
 }

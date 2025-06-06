@@ -7,9 +7,11 @@ let ws: DanmakuWebSocket | undefined
 // eslint-disable-next-line import/no-mutable-exports
 let timer: NodeJS.Timeout
 const sleepPeopleMap = ref(new Map<string, SleepPeopleItem>())
+const comments = ref<BiliMessage[]>([])
 
 export interface CreateSocketOptions extends WebsocketInfo {
   onReceiveMsg?: () => void
+  onChangeBg?: () => void
   game_id: string
 }
 
@@ -22,7 +24,7 @@ export const defaultStyle = {
  * 创建socket长连接
  */
 function createSocket(options: CreateSocketOptions) {
-  const { auth_body, wss_link, game_id } = options
+  const { auth_body, wss_link, game_id, onChangeBg } = options
   const opt = {
     ...getWebSocketConfig(auth_body, wss_link),
     // 收到消息,
@@ -35,6 +37,8 @@ function createSocket(options: CreateSocketOptions) {
         {
           console.log(res)
           const { open_id, uface, uname, msg, emoji_img_url } = res.data as BiliMessage
+          comments.value.push(res.data as BiliMessage)
+
           const isHas = sleepPeopleMap.value.has(open_id)
           const mapItem = sleepPeopleMap.value.get(open_id)
 
@@ -62,6 +66,10 @@ function createSocket(options: CreateSocketOptions) {
               if (isHas) {
                 (sleepPeopleMap.value.get(open_id)!.style.left as number) += 5
               }
+              break
+
+            case '切换壁纸':
+              onChangeBg && onChangeBg()
               break
             default:
               if (isHas) {
@@ -146,4 +154,4 @@ function getWsClient() {
   return ws
 }
 
-export { createSocket, destroySocket, getWebSocketConfig, getWsClient, sleepPeopleMap, timer }
+export { comments, createSocket, destroySocket, getWebSocketConfig, getWsClient, sleepPeopleMap, timer }
