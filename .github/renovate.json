@@ -1,5 +1,13 @@
 {
   "extends": ["config:base"],
   "automerge": true,
-  "automergeType": "squash"
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "packageRules": [
+    {
+      "groupName": "all deps",
+      "matchPackagePatterns": [".*"],
+      "matchUpdateTypes": ["major", "minor", "patch"]
+    }
+  ]
 }
