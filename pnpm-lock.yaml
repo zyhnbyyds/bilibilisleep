@@ -156,8 +156,8 @@ importers:
         specifier: ^0.2.6
         version: 0.2.6(@swc/core@1.11.31(@swc/helpers@0.5.17))(webpack@5.99.6(@swc/core@1.11.31(@swc/helpers@0.5.17)))
       ulid:
-        specifier: ^2.4.0
-        version: 2.4.0
+        specifier: ^3.0.0
+        version: 3.0.0
       unplugin-swc:
         specifier: ^1.5.1
         version: 1.5.3(@swc/core@1.11.31(@swc/helpers@0.5.17))
@@ -6593,8 +6593,8 @@ packages:
     resolution: {integrity: sha512-ZPtzy0hu4cZjv3z5NW9gfKnNLjoz4y6uv4HlelAjDK7sY/xOkKZv9xK/WQpcsBB3jEybChz9DPC2U/+cusjJVQ==}
     engines: {node: '>=18'}
 
-  ulid@2.4.0:
-    resolution: {integrity: sha512-fIRiVTJNcSRmXKPZtGzFQv9WRrZ3M9eoptl/teFJvjOzmpU+/K/JH6HZ8deBfb5vMEpicJcLn7JmvdknlMq7Zg==}
+  ulid@3.0.0:
+    resolution: {integrity: sha512-yvZYdXInnJve6LdlPIuYmURdS2NP41ZoF4QW7SXwbUKYt53+0eDAySO+rGSvM2O/ciuB/G+8N7GQrZ1mCJpuqw==}
     hasBin: true
 
   unbox-primitive@1.1.0:
@@ -14680,7 +14680,7 @@ snapshots:
 
   uint8array-extras@1.4.0: {}
 
-  ulid@2.4.0: {}
+  ulid@3.0.0: {}
 
   unbox-primitive@1.1.0:
     dependencies:
