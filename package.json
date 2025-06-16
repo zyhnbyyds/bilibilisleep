@@ -81,7 +81,7 @@
     "@compodoc/compodoc": "^1.1.26",
     "@nestjs/schematics": "^11.0.2",
     "@swc/core": "^1.11.11",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "@types/lodash": "^4.17.16",
     "@types/luxon": "^3.4.2",
     "@types/ms": "^2.1.0",
