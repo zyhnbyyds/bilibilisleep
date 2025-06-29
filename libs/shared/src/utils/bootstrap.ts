@@ -1,6 +1,5 @@
-import compression from '@fastify/compress'
-import fastifyCsrf from '@fastify/csrf-protection'
-import secureSession, { SecureSessionPluginOptions } from '@fastify/secure-session'
+/* eslint-disable ts/no-require-imports */
+import { SecureSessionPluginOptions } from '@fastify/secure-session'
 import { DynamicModule, Logger, Type, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
@@ -61,13 +60,13 @@ export async function bootstrap(options: BootstrapOptions) {
   }
 
   if (options.secureSession)
-    await app.register(secureSession, options.secureSession)
+    await app.register<SecureSessionPluginOptions>(require('@fastify/secure-session'), options.secureSession)
 
   if (options.fastifyCsrf)
-    await app.register(fastifyCsrf)
+    await app.register(require('@fastify/csrf-protection'))
 
   if (options.compression)
-    await app.register(compression)
+    await app.register(require('@fastify/compress'))
 
   app.useLogger(WinstonModule.createLogger(winstonLoggerOptions))
 
