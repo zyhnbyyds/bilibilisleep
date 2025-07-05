@@ -4,7 +4,6 @@ import { doHeart } from './apis'
 
 /* eslint-disable no-console */
 let ws: DanmakuWebSocket | undefined
-// eslint-disable-next-line import/no-mutable-exports
 let timer: NodeJS.Timeout
 const sleepPeopleMap = ref(new Map<string, SleepPeopleItem>())
 const comments = ref<BiliMessage[]>([])

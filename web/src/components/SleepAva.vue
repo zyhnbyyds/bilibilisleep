@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import type { SleepPeopleItem } from '@type/sleep'
 
-const { style = {} } = defineProps<SleepPeopleItem>()
+const { style = {}, uface } = defineProps<SleepPeopleItem>()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const { style = {} } = defineProps<SleepPeopleItem>()
       </div>
     </Transition>
 
-    <img h-10 w-10 rounded-full src="/uface.jpg">
+    <img h-10 w-10 rounded-full :src="uface">
   </div>
 </template>
 
