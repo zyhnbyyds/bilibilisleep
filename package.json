@@ -100,7 +100,7 @@
   },
   "pnpm": {
     "overrides": {
-      "sodium-native": "5.0.9"
+      "sodium-native": "5.0.10"
     }
   },
   "jest": {
