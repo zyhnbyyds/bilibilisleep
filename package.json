@@ -48,7 +48,7 @@
     "axios": "^1.10.0",
     "bullmq": "^5.56.0",
     "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.2",
+    "class-validator": "^0.15.0",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "fastify": "^5.4.0",
@@ -100,7 +100,7 @@
   },
   "pnpm": {
     "overrides": {
-      "sodium-native": "5.0.9"
+      "sodium-native": "5.1.0"
     }
   },
   "jest": {
