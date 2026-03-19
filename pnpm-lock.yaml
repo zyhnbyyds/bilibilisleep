@@ -22,13 +22,13 @@ importers:
         version: 2.1.0
       '@fastify/secure-session':
         specifier: ^8.2.0
-        version: 8.3.0(bare-events@2.8.2)(bare-url@2.1.6)
+        version: 8.3.0(bare-events@2.8.2)(bare-url@2.3.2)
       '@fastify/static':
         specifier: ^8.2.0
         version: 8.3.0
       '@nest-lab/throttler-storage-redis':
         specifier: ^1.1.0
-        version: 1.2.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/throttler@6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2))(ioredis@5.10.0)(reflect-metadata@0.2.2)
+        version: 1.2.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/throttler@6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2))(ioredis@5.10.1)(reflect-metadata@0.2.2)
       '@nestjs/axios':
         specifier: ^4.0.0
         version: 4.0.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(axios@1.13.6)(rxjs@7.8.2)
@@ -58,7 +58,7 @@ importers:
         version: 2.1.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)
       '@nestjs/microservices':
         specifier: ^11.1.3
-        version: 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.0)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+        version: 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/passport':
         specifier: ^11.0.5
         version: 11.0.5(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
@@ -106,7 +106,7 @@ importers:
         version: 5.8.2
       ioredis:
         specifier: ^5.6.1
-        version: 5.10.0
+        version: 5.10.1
       lodash:
         specifier: ^4.17.21
         version: 4.17.23
@@ -127,7 +127,7 @@ importers:
         version: 7.0.13
       openai:
         specifier: ^5.8.2
-        version: 5.23.2
+        version: 5.23.2(ws@8.18.3)
       openapi3-ts:
         specifier: ^4.5.0
         version: 4.5.0
@@ -2944,8 +2944,8 @@ packages:
       bare-abort-controller:
         optional: true
 
-  bare-fs@4.5.5:
-    resolution: {integrity: sha512-XvwYM6VZqKoqDll8BmSww5luA5eflDzY0uEFfBJtFKe4PAAtxBjU3YIxzIBzhyaEQBy1VXEQBto4cpN5RZJw+w==}
+  bare-fs@4.5.6:
+    resolution: {integrity: sha512-1QovqDrR80Pmt5HPAsMsXTCFcDYr+NSUKW6nd6WO5v0JBmnItc/irNRzm2KOQ5oZ69P37y+AMujNyNtG+1Rggw==}
     engines: {bare: '>=1.16.0'}
     peerDependencies:
       bare-buffer: '*'
@@ -2975,6 +2975,17 @@ packages:
   bare-semver@1.0.2:
     resolution: {integrity: sha512-ESVaN2nzWhcI5tf3Zzcq9aqCZ676VWzqw07eEZ0qxAcEOAFYBa0pWq8sK34OQeHLY3JsfKXZS9mDyzyxGjeLzA==}
 
+  bare-stream@2.10.0:
+    resolution: {integrity: sha512-DOPZF/DDcDruKDA43cOw6e9Quq5daua7ygcAwJE/pKJsRWhgSSemi7qVNGE5kyDIxIeN1533G/zfbvWX7Wcb9w==}
+    peerDependencies:
+      bare-buffer: '*'
+      bare-events: '*'
+    peerDependenciesMeta:
+      bare-buffer:
+        optional: true
+      bare-events:
+        optional: true
+
   bare-stream@2.8.1:
     resolution: {integrity: sha512-bSeR8RfvbRwDpD7HWZvn8M3uYNDrk7m9DQjYOFkENZlXW8Ju/MPaqUPQq5LqJ3kyjEm07siTaAQ7wBKCU59oHg==}
     peerDependencies:
@@ -2989,9 +3000,6 @@ packages:
   bare-type@1.1.0:
     resolution: {integrity: sha512-LdtnnEEYldOc87Dr4GpsKnStStZk3zfgoEMXy8yvEZkXrcCv9RtYDrUYWFsBQHtaB0s1EUWmcvS6XmEZYIj3Bw==}
     engines: {bare: '>=1.2.0'}
-
-  bare-url@2.1.6:
-    resolution: {integrity: sha512-FgjDeR+/yDH34By4I0qB5NxAoWv7dOTYcOXwn73kr+c93HyC2lU6tnjifqUe33LKMJcDyCYPQjEAqgOQiXkE2Q==}
 
   bare-url@2.3.2:
     resolution: {integrity: sha512-ZMq4gd9ngV5aTMa5p9+UfY0b3skwhHELaDkhEHetMdX0LRkW9kzaym4oo/Eh+Ghm0CCDuMTsRIGM/ytUc1ZYmw==}
@@ -4614,8 +4622,8 @@ packages:
   inspect-with-kind@1.0.5:
     resolution: {integrity: sha512-MAQUJuIo7Xqk8EVNP+6d3CKq9c80hi4tjIbIAT6lmGW9W6WzlHiu9PS8uSuUYU+Do+j1baiFp3H25XEVxDIG2g==}
 
-  ioredis@5.10.0:
-    resolution: {integrity: sha512-HVBe9OFuqs+Z6n64q09PQvP1/R4Bm+30PAyyD4wIEqssh3v9L21QjCVk4kRLucMBcDokJTcLjsGeVRlq/nH6DA==}
+  ioredis@5.10.1:
+    resolution: {integrity: sha512-HuEDBTI70aYdx1v6U97SbNx9F1+svQKBDo30o0b9fw055LMepzpOOd0Ccg9Q6tbqmBSJaMuY0fB7yw9/vjBYCA==}
     engines: {node: '>=12.22.0'}
 
   ioredis@5.9.3:
@@ -6434,6 +6442,9 @@ packages:
 
   streamx@2.23.0:
     resolution: {integrity: sha512-kn+e44esVfn2Fa/O0CPFcex27fjIL6MkVae0Mm6q+E6f0hWv578YCERbv+4m02cjxvDsPKLnmxral/rR6lBMAg==}
+
+  streamx@2.25.0:
+    resolution: {integrity: sha512-0nQuG6jf1w+wddNEEXCF4nTg3LtufWINB5eFEN+5TNZW7KWJp6x87+JFL43vaAUPyCfH1wID+mNVyW6OHtFamg==}
 
   string-length@4.0.2:
     resolution: {integrity: sha512-+l6rNN5fYHNhZZy41RXsYptCjA2Igmq4EG7kZAYFQI1E1VTXarr6ZPXBg6eq7Y6eK4FEhY6AJlyuFIb/v/S0VQ==}
@@ -8508,11 +8519,11 @@ snapshots:
       '@fastify/forwarded': 3.0.1
       ipaddr.js: 2.3.0
 
-  '@fastify/secure-session@8.3.0(bare-events@2.8.2)(bare-url@2.1.6)':
+  '@fastify/secure-session@8.3.0(bare-events@2.8.2)(bare-url@2.3.2)':
     dependencies:
       '@fastify/cookie': 11.0.2
       fastify-plugin: 5.1.0
-      sodium-native: 5.1.0(bare-events@2.8.2)(bare-url@2.1.6)
+      sodium-native: 5.1.0(bare-events@2.8.2)(bare-url@2.3.2)
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -9062,12 +9073,12 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@nest-lab/throttler-storage-redis@1.2.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/throttler@6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2))(ioredis@5.10.0)(reflect-metadata@0.2.2)':
+  '@nest-lab/throttler-storage-redis@1.2.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/throttler@6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2))(ioredis@5.10.1)(reflect-metadata@0.2.2)':
     dependencies:
       '@nestjs/common': 11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.17)(@nestjs/platform-express@11.1.1)(@nestjs/websockets@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/throttler': 6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2)
-      ioredis: 5.10.0
+      ioredis: 5.10.1
       reflect-metadata: 0.2.2
       tslib: 2.8.1
 
@@ -9163,7 +9174,7 @@ snapshots:
       tslib: 2.8.1
       uid: 2.0.2
     optionalDependencies:
-      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.0)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/platform-express': 11.1.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)
       '@nestjs/websockets': 11.1.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/platform-socket.io@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
@@ -9181,7 +9192,7 @@ snapshots:
       class-transformer: 0.5.1
       class-validator: 0.15.1
 
-  '@nestjs/microservices@11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.0)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
+  '@nestjs/microservices@11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
       '@nestjs/common': 11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.17)(@nestjs/platform-express@11.1.1)(@nestjs/websockets@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -9192,7 +9203,7 @@ snapshots:
     optionalDependencies:
       '@nestjs/websockets': 11.1.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/platform-socket.io@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       cache-manager: 6.4.3
-      ioredis: 5.10.0
+      ioredis: 5.10.1
       nats: 2.29.3
 
   '@nestjs/passport@11.0.5(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)':
@@ -9286,7 +9297,7 @@ snapshots:
       rxjs: 7.8.2
     optionalDependencies:
       '@nestjs/axios': 4.0.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(axios@1.13.6)(rxjs@7.8.2)
-      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.0)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3)
 
   '@nestjs/testing@11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/microservices@11.1.17)(@nestjs/platform-express@11.1.1)':
@@ -9295,7 +9306,7 @@ snapshots:
       '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.17)(@nestjs/platform-express@11.1.1)(@nestjs/websockets@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       tslib: 2.8.1
     optionalDependencies:
-      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.0)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/microservices': 11.1.17(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/websockets@11.1.1)(cache-manager@6.4.3)(ioredis@5.10.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/platform-express': 11.1.1(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)
 
   '@nestjs/throttler@6.5.0(@nestjs/common@11.1.17(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(reflect-metadata@0.2.2)':
@@ -10448,12 +10459,12 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  bare-addon-resolve@1.10.0(bare-url@2.1.6):
+  bare-addon-resolve@1.10.0(bare-url@2.3.2):
     dependencies:
-      bare-module-resolve: 1.12.1(bare-url@2.1.6)
+      bare-module-resolve: 1.12.1(bare-url@2.3.2)
       bare-semver: 1.0.2
     optionalDependencies:
-      bare-url: 2.1.6
+      bare-url: 2.3.2
 
   bare-ansi-escapes@2.2.3(bare-events@2.8.2):
     dependencies:
@@ -10474,11 +10485,11 @@ snapshots:
 
   bare-events@2.8.2: {}
 
-  bare-fs@4.5.5:
+  bare-fs@4.5.6:
     dependencies:
       bare-events: 2.8.2
       bare-path: 3.0.0
-      bare-stream: 2.8.1(bare-events@2.8.2)
+      bare-stream: 2.10.0(bare-events@2.8.2)
       bare-url: 2.3.2
       fast-fifo: 1.3.2
     transitivePeerDependencies:
@@ -10496,11 +10507,11 @@ snapshots:
       - bare-events
       - react-native-b4a
 
-  bare-module-resolve@1.12.1(bare-url@2.1.6):
+  bare-module-resolve@1.12.1(bare-url@2.3.2):
     dependencies:
       bare-semver: 1.0.2
     optionalDependencies:
-      bare-url: 2.1.6
+      bare-url: 2.3.2
 
   bare-os@3.8.0:
     optional: true
@@ -10511,6 +10522,17 @@ snapshots:
     optional: true
 
   bare-semver@1.0.2: {}
+
+  bare-stream@2.10.0(bare-events@2.8.2):
+    dependencies:
+      streamx: 2.25.0
+      teex: 1.0.1
+    optionalDependencies:
+      bare-events: 2.8.2
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - react-native-b4a
+    optional: true
 
   bare-stream@2.8.1(bare-events@2.8.2):
     dependencies:
@@ -10523,11 +10545,6 @@ snapshots:
       - react-native-b4a
 
   bare-type@1.1.0: {}
-
-  bare-url@2.1.6:
-    dependencies:
-      bare-path: 3.0.0
-    optional: true
 
   bare-url@2.3.2:
     dependencies:
@@ -12381,7 +12398,7 @@ snapshots:
       kind-of: 6.0.3
     optional: true
 
-  ioredis@5.10.0:
+  ioredis@5.10.1:
     dependencies:
       '@ioredis/commands': 1.5.1
       cluster-key-slot: 1.1.2
@@ -13745,7 +13762,9 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@5.23.2: {}
+  openai@5.23.2(ws@8.18.3):
+    optionalDependencies:
+      ws: 8.18.3
 
   openapi3-ts@4.5.0:
     dependencies:
@@ -14235,9 +14254,9 @@ snapshots:
   relative-microtime@2.0.0:
     optional: true
 
-  require-addon@1.2.0(bare-url@2.1.6):
+  require-addon@1.2.0(bare-url@2.3.2):
     dependencies:
-      bare-addon-resolve: 1.10.0(bare-url@2.1.6)
+      bare-addon-resolve: 1.10.0(bare-url@2.3.2)
     transitivePeerDependencies:
       - bare-url
 
@@ -14516,10 +14535,10 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  sodium-native@5.1.0(bare-events@2.8.2)(bare-url@2.1.6):
+  sodium-native@5.1.0(bare-events@2.8.2)(bare-url@2.3.2):
     dependencies:
       bare-assert: 1.2.0(bare-events@2.8.2)
-      require-addon: 1.2.0(bare-url@2.1.6)
+      require-addon: 1.2.0(bare-url@2.3.2)
       which-runtime: 1.3.2
     transitivePeerDependencies:
       - bare-abort-controller
@@ -14638,6 +14657,16 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
+
+  streamx@2.25.0:
+    dependencies:
+      events-universal: 1.0.1
+      fast-fifo: 1.3.2
+      text-decoder: 1.2.7
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - react-native-b4a
+    optional: true
 
   string-length@4.0.2:
     dependencies:
@@ -14767,9 +14796,9 @@ snapshots:
   tar-stream@3.1.8:
     dependencies:
       b4a: 1.8.0
-      bare-fs: 4.5.5
+      bare-fs: 4.5.6
       fast-fifo: 1.3.2
-      streamx: 2.23.0
+      streamx: 2.25.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
